@@ -1,0 +1,10 @@
+<div class="topnav">
+	<a (click)="doSearch(num)" *ngFor="let num of numbers">Search {{num+1}}</a>
+	
+	<div class="search-container">
+	<form>
+		<input type="text" placeholder="Search.." name="search" [(ngModel)]="searchText">
+		<button (click)="saveSearch()"><i class="fa fa-search"></i></button>
+	</form>
+	</div>
+</div>

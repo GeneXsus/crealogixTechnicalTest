@@ -1,0 +1,12 @@
+<article>
+	<section class="section_data" *ngIf="detailsItems">
+		<p>Title: {{detailsItems.title}} </p>
+		<p>Episode_id:{{detailsItems.episode_id}} </p>
+		<p>Opening_crawl:{{detailsItems.opening_crawl}} </p>
+		<p>Director:{{detailsItems.director}} </p>
+		<p>Producer:{{detailsItems.producer}} </p>
+	</section>
+	<div class="button_end">
+		<button style (click)="rollBack()">Back</button>
+	</div>
+</article>

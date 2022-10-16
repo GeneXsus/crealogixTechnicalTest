@@ -1,0 +1,12 @@
+<article>
+	<section class="section_data">
+		<p *ngFor="let item of listItems | appFilter: searched">
+			{{item.title}} / {{item.director}} / {{item.release_date}} <a [href]="item.url">More datails</a> </p>
+		<p *ngIf="(listItems| appFilter : searched)?.length <= 0">No record found in this page !</p>
+
+		<div class="button_end">
+			<button *ngIf="beforeItem" (click)="changePage(beforeItem)">Previous</button>
+			<button *ngIf="nextItem" (click)="changePage(nextItem)">Next</button>
+		</div>
+	</section>
+</article>
