@@ -4,6 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Install all packages
  npm install
+
+## Change Max size of search array
+ go to src\environments and change  environment.ts for dev or environment.prod.ts for prod.
+ the variable is called 'maxSave' in row 3
+
 ## Development server
 
 Run `npm start` or `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
