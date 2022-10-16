@@ -22,4 +22,8 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+    it('should render In Process', () => {
+    const element = fixture.nativeElement.querySelector('h1').textContent;
+    expect(element).toContain('Welcome to Star Wars Page');
+  });
 });

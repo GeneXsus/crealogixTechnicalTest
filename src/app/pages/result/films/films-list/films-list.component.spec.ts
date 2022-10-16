@@ -28,16 +28,22 @@ describe('FilmsListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-  
-  it('LoadList', () => {
-    expect(component.loadList('https://swapi.dev/api/films/')).toBe(void 0);
+ 
+  it('LoadList and changePage', () => {
+	const url= 'https://swapi.dev/api/films/';
+	const spyLoadList = spyOn(component, 'loadList')
+	component.changePage(url)
+    expect(spyLoadList).toHaveBeenCalledWith(url);
+    expect(component.loadList(url)).toBe(void 0);
   });
 
   it('changePage', () => {
-    expect(component.changePage('https://swapi.dev/api/films/1')).toBe(void 0);
+	localStorage.removeItem('rollBackUrl')
+	localStorage.removeItem('needRollBack')
+	component.changePage('https://swapi.dev/api/films/1')
+    expect(localStorage.getItem('rollBackUrl')).toBe('https://swapi.dev/api/films/1');
+    expect(localStorage.getItem('needRollBack')).toBe('true');
+    expect(localStorage.getItem('rollBack')).toBeNull();
   });
 
   it('getUrlItem', () => {

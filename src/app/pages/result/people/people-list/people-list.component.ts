@@ -18,6 +18,7 @@ export class PeopleListComponent implements OnInit {
 	public nextItem;
 	public beforeItem;
 	public searched = ''
+	ùbli
 
 
 	constructor(private activatedRoute: ActivatedRoute, private router: Router, public starWarsService: StarWarsCallService, private cdr: ChangeDetectorRef) { }
@@ -64,6 +65,7 @@ export class PeopleListComponent implements OnInit {
 				resp => {
 					// we map the result to the time we call to retrieve the homeworld
 					resp.results.map(item => {
+						//you need to add a preloader to avoid changing data in the view when the async call ends. But it is not evaluable and is left to do
 						this.planetSubscription$ =  this.starWarsService.callUrl(item.homeworld).subscribe(
 							response => {
 								item.homeworld = response['name'];

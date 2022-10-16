@@ -23,7 +23,9 @@ describe('StarWarsCallService', () => {
   });
   
   it('emitSearched', () => {
-    expect(service.emitSearched('Solo')).toBe(void 0);
+	const spyLoadList = spyOn(service.searched, 'emit')
+	service.emitSearched('Solo')
+    expect(spyLoadList).toHaveBeenCalledWith('Solo');
   });
   
   it('getSearch and unshiftSearch Test', () => {
