@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FilmsDetailsComponent } from './pages/films/films-details/films-details.component';
-import { FilmsListComponent } from './pages/films/films-list/films-list.component';
-import { HomeComponent } from './pages/home/home.component';
-import { InprogressComponent } from './pages/inprogress/inprogress.component';
-import { PeopleDetailsComponent } from './pages/people/people-details/people-details.component';
-import { PeopleListComponent } from './pages/people/people-list/people-list.component';
+import { HomeComponent } from './pages/general/home/home.component';
+import { InprogressComponent } from './pages/general/inprogress/inprogress.component';
+import { FilmsDetailsComponent } from './pages/result/films/films-details/films-details.component';
+import { FilmsListComponent } from './pages/result/films/films-list/films-list.component';
+import { PeopleDetailsComponent } from './pages/result/people/people-details/people-details.component';
+import { PeopleListComponent } from './pages/result/people/people-list/people-list.component';
+
 
 
 const routes: Routes = [
